@@ -6,6 +6,7 @@
       (setq mac-command-key-is-meta t)
       (setq mac-command-modifier 'meta)
       (setq mac-option-modifier nil)
+      (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
       ))
 
 ;; Misc Reconfigurations
@@ -54,40 +55,27 @@
 ;; Display the column number of the point in the mode line
 (column-number-mode t)
 
-
-
-;; Load Paths
-;; (setq load-path (cons "~/.emacs.d" load-path))
-;; (setq load-path (cons "~/.emacs.d/elib-1.0" load-path))
-;; (setq load-path (cons "~/.emacs.d/color-theme" load-path))
-;; (setq load-path (cons "~/.emacs.d/org-7.4/lisp" load-path))
-;; ;(setq load-path (cons "~/.emacs.d/remember" load-path))
-;; (setq load-path (cons "~/.emacs.d/rvm" load-path))
-;; (setq load-path (cons "~/.emacs.d/ruby-mode" load-path))
-;; (setq load-path (cons "~/.emacs.d/rspec-mode" load-path))
-;; (setq load-path (cons "~/.emacs.d/rhtml" load-path))
-;; (setq load-path (cons "~/.emacs.d/rinari" load-path))
-;; (setq load-path (cons "/Applications/LilyPond.app/Contents/Resources/share/emacs/site-lisp" load-path))
-;; (setq load-path (cons "/usr/local/share/emacs/site-lisp/w3m" load-path))
-
-
 (require 'package)
+; (add-to-list 'package-archives
+;              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("marmalade" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
 
 ;; Color Theme and Zenburn
 (require 'color-theme)
 (load-theme 'solarized-dark t)
-;
+
+                                        ;
+
 ;(color-theme-select)
 ;(color-theme-jsc-light)
 ;;(color-theme-initialize)
 ;;(require 'zenburn-theme)
 
 ;; git support
-(require 'magit)
+;; DEBUG(require 'magit)
 ;;(require 'git-blame)
 
 ;; rvm support
@@ -114,6 +102,12 @@
 ;;       (append '(("\\.rake$" . ruby-mode)) auto-mode-alist))
 ;; (setq interpreter-mode-alist (append '(("ruby" . ruby-mode))
 ;;                                      interpreter-mode-alist))
+;; (push (ruby-hash-string
+;;        (regexp . "\\(\\s-*\\)\\(\"[^\"]*\"\\|:[a-zA-Z]*\\)\\(\\s-*\\)=>\\(\\s-*\\)")
+;;        (group . (1 3 4))
+;;        (repeat . t)
+;;        (modes '(ruby-mode)))
+;;       align-rules-list)
 
 ;; (autoload 'run-ruby "inf-ruby"
 ;;   "Run an inferior Ruby process")
