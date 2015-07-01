@@ -52,6 +52,7 @@
 (require 'package)
 (add-to-list 'package-archives
               '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 ;; Bootstrap `use-package'
@@ -71,8 +72,9 @@
 	     (progn (load-theme 'sanityinc-solarized-dark t)))
 
 ;; git Support
-(use-package gh :ensure t)
+;(use-package gh :ensure t)
 (setq magit-last-seen-setup-instructions "1.4.0")
+;(use-package magit :ensure t)
 (use-package magit-tramp :ensure t)
 
 ;; Ruby and Rails
@@ -108,7 +110,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 150 :width normal :foundry "apple" :family "Droid_Sans_Mono")))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "apple" :family "Droid_Sans_Mono")))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
