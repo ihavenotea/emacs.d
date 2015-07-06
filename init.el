@@ -52,7 +52,6 @@
 (require 'package)
 (add-to-list 'package-archives
               '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 ;; Bootstrap `use-package'
@@ -72,7 +71,7 @@
 	     (progn (load-theme 'sanityinc-solarized-dark t)))
 
 ;; git Support
-;(use-package gh :ensure t)
+(use-package gh :ensure t)
 (setq magit-last-seen-setup-instructions "1.4.0")
 ;(use-package magit :ensure t)
 (use-package magit-tramp :ensure t)
