@@ -86,6 +86,10 @@
 	     :init
 	     (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)))
 
+;; ECMAScript and Friends
+(use-package coffee-mode
+  :ensure t)
+
 ;; February's Functions
 (load "support")
 
